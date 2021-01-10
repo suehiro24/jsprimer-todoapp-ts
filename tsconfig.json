@@ -1,35 +1,35 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["dom", "es2019"],
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["*"]
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "lib": ["dom", "es2019"],
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": ["*"]
+        },
+        "sourceMap": true,
+        // ================
+        // Code options
+        // ================
+        // 常にstrict modeとする
+        "alwaysStrict": true,
+        // 暗黙のany型の場合、エラーとなる
+        "noImplicitAny": true,
+        // 未使用のローカル変数が存在するときに、エラーとなる
+        "noUnusedLocals": true,
+        // 未使用のパラメータが存在するときに、エラーとなる
+        "noUnusedParameters": true,
+        // nullとundefinedを、すべての型の領域から外す
+        // 明示的な宣言をすれば、使用可能
+        "strictNullChecks": true
     },
-    "sourceMap": true,
-    // ================
-    // Code options
-    // ================
-    // 常にstrict modeとする
-    "alwaysStrict": true,
-    // 暗黙のany型の場合、エラーとなる
-    "noImplicitAny": true,
-    // 未使用のローカル変数が存在するときに、エラーとなる
-    "noUnusedLocals": true,
-    // 未使用のパラメータが存在するときに、エラーとなる
-    "noUnusedParameters": true,
-    // nullとundefinedを、すべての型の領域から外す
-    // 明示的な宣言をすれば、使用可能
-    "strictNullChecks": true
-  },
-  "include": ["./src/**/*.ts"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "./webpack.config.js"
-  ]
+    "include": ["./src/**/*.ts"],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "./webpack.config.js"
+    ]
 }

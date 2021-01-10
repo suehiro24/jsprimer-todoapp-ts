@@ -1,2 +1,4 @@
-console.log('index.js: loaded');
-console.log('index.js: check hot-reload');
+import { App } from "./App";
+
+const app = new App();
+app.mount();
