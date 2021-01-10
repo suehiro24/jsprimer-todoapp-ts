@@ -1,30 +1,22 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 const path = require('path');
+const distPath = path.join(__dirname, 'dist');
 
 module.exports = {
-  // モード値を production に設定すると最適化された状態で、
-  // development に設定するとソースマップ有効でjsファイルが出力される
   mode: 'development', // "production" | "development" | "none"
 
-  // メインとなるjavascriptファイル（エントリーポイント）
+  target: 'web', // 'node'
+
   entry: './src/index.ts',
-
-  // サーバー
-  // target: 'node',
-  // ウェブ
-  target: 'web',
-
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: distPath,
     filename: 'index.js',
   },
 
   module: {
     rules: [
       {
-        // 拡張子 .ts の場合
         test: /\.ts$/,
-        // typescript をコンパイルする
         use: 'ts-loader',
       },
     ],
@@ -39,4 +31,12 @@ module.exports = {
       '.js', // node_modulesのライブラリ読み込みに必要
     ],
   },
+  // webpack-dev-server
+  devServer: {
+    contentBase: distPath,
+    inline: true,
+    hot: true,
+  },
+  // create source-map
+  devtool: 'inline-source-map',
 };
